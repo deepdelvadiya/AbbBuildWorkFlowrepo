@@ -24,7 +24,7 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./gradlew
     - name: Assemble Release Bundle
-      run: ./gradlew app:bundleRelease
+      run: ./gradlew assembleRelease
     - name: Sign Release
       uses: r0adkll/sign-android-release@v1
       with:
