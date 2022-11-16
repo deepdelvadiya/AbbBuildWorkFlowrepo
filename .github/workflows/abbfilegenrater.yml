@@ -1,0 +1,32 @@
+name: Build Release App Bundle
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore/your_signing_keystore.jks'
+          encodedString: "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"
+      - uses: actions/checkout@v2
+      - name: set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: build prod
+        run: ./gradlew app:bundleRelease
+        env:
+          SIGNING_KEY_ALIAS: "test"
+          SIGNING_KEY_PASSWORD: "Test@123"
+          SIGNING_STORE_PASSWORD: "Test@123"
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: Build Artifacts
+          path: app/build/outputs/
